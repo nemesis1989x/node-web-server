@@ -9,7 +9,12 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Coordinate Error happened!', undefined);
         } else {
-            callback(undefined, 'Description: ' + body.current.weather_descriptions.toString() + ', the temperature is: ' + body.current.temperature + '°. It feels like ' + body.current.feelslike + '°');
+            const weatherInfo = `Description: ${body.current.weather_descriptions.toString()}
+            Temperature: ${body.current.temperature}°
+            Realfeel: ${body.current.feelslike}°;
+            Humidity: ${body.current.humidity}°`;
+            debugger;
+            callback(undefined, weatherInfo);
         }
     });
 };
