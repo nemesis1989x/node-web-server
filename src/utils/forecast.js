@@ -11,9 +11,9 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             const weatherInfo = `Description: ${body.current.weather_descriptions.toString()}
             Temperature: ${body.current.temperature}°
-            Realfeel: ${body.current.feelslike}°;
-            Humidity: ${body.current.humidity}°`;
-            debugger;
+            Realfeel: ${body.current.feelslike}°
+            Humidity: ${body.current.humidity}%`;
+
             callback(undefined, weatherInfo);
         }
     });
